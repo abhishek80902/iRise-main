@@ -9,27 +9,27 @@ import {
 
 const pains = [
   {
-    text: "Persistent acidity, gas, bloating, or constipation that doesn’t improve despite repeated treatments.",
+    text: "Acidity, Gas, Bloating ya Constipation jo peecha nahi chhod rahi.",
     icon: AlertCircle,
     color: "#3B82F6"
   },
   {
-    text: "Waking up tired every morning and feeling low on energy throughout the day.",
+    text: "Subah uthte hi thakann mehsoos hona aur din bhar sust rehna.",
     icon: Clock,
     color: "#10B981"
   },
   {
-    text: "Joint pain, stiffness, or a constant heaviness in the body affecting daily movement.",
+    text: "Joints mein dard ya sharir mein bhari pan rehna.",
     icon: TrendingDown,
     color: "#F59E0B"
   },
   {
-    text: "Depending on multiple medicines every day while still not feeling truly healthy.",
+    text: "Rozana ki mutthi bhar dawaiyan jinse aap peecha chhudana chahte hain.",
     icon: EyeOff,
     color: "#6366F1"
   },
   {
-    text: "Being told there is no permanent solution and that you must only ‘manage it for life’.",
+    text: "Doctors ne giveup kar diya hai and koi rasta nazar nahi aa rha hai.",
     icon: AlertCircle,
     color: "#0EA5E9"
   }
@@ -70,15 +70,16 @@ export default function PainSection() {
 
         {/* Heading */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-14">
-          Are You Dealing With These Health Problems{" "}
-          <span className="text-blue-600">Every Day?</span>
-          <span className="block mt-4 text-lg sm:text-xl font-normal text-slate-600">
-            And still not finding{" "}
-            <span className="font-semibold text-emerald-600">
-              real, lasting relief
-            </span>
-            ?
-          </span>
+          Kya Aap In Pareshaniyon Se Ladte Hain?{" "}
+          <span className="text-blue-600">Roz?</span>
+          <span className="block mt-4 text-lg sm:text-xl italic text-slate-600">
+  And still not finding{" "}
+  <span className="font-semibold text-emerald-600 not-italic">
+    real, lasting relief
+  </span>
+  ?
+</span>
+
         </h2>
 
         {/* Progress */}
@@ -97,68 +98,82 @@ export default function PainSection() {
 
         {/* Cards */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {pains.map((item, i) => {
-            const Icon = item.icon;
-            const isActive = i === active;
+  {pains.map((item, i) => {
+    const Icon = item.icon;
+    const isActive = i === active;
 
-            return (
-              <motion.div
-                key={i}
-                onClick={() => setActive(i)}
-                onMouseEnter={() => setPaused(true)}
-                onMouseLeave={() => setPaused(false)}
-                animate={{
-                  y: isActive ? -6 : 0,
-                  scale: isActive ? 1.04 : 1
-                }}
-                transition={{ duration: 0.35 }}
-                className="relative cursor-pointer rounded-3xl p-6 text-left border"
-                style={{
-                  backgroundColor: isActive
-                    ? `${item.color}08`
-                    : "#FFFFFF",
-                  borderColor: isActive
-                    ? `${item.color}44`
-                    : "#E5E7EB"
-                }}
-              >
-                {/* Active ring */}
-                {isActive && (
-                  <div
-                    className="absolute inset-0 rounded-3xl pointer-events-none"
-                    style={{
-                      boxShadow: `0 12px 28px ${item.color}22`
-                    }}
-                  />
-                )}
+    return (
+      <motion.div
+        key={i}
+        onClick={() => setActive(i)}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        animate={{
+          y: isActive ? -4 : 0,
+          scale: isActive ? 1.03 : 0.98
+        }}
+        transition={{ duration: 0.35, ease: "easeOut" }}
+        className="relative cursor-pointer rounded-3xl p-7 border bg-white overflow-hidden"
+        style={{
+          borderColor: isActive
+            ? `${item.color}55`
+            : "#E5E7EB"
+        }}
+      >
+        {/* LEFT ACCENT BAR */}
+        <motion.div
+          animate={{ opacity: isActive ? 1 : 0 }}
+          className="absolute left-0 top-0 bottom-0 w-1"
+          style={{
+            background: `linear-gradient(to bottom, ${item.color}, transparent)`
+          }}
+        />
 
-                <div className="relative z-10 flex flex-col gap-4">
-                  <div
-                    className="w-11 h-11 rounded-full flex items-center justify-center"
-                    style={{ backgroundColor: `${item.color}22` }}
-                  >
-                    <Icon size={20} style={{ color: item.color }} />
-                  </div>
+        {/* SOFT BACKGROUND GLOW */}
+        {isActive && (
+          <div
+            className="absolute inset-0 rounded-3xl pointer-events-none"
+            style={{
+              background: `radial-gradient(circle at top left, ${item.color}12, transparent 60%)`
+            }}
+          />
+        )}
 
-                  <p className="text-base text-slate-700 leading-relaxed">
-                    {item.text}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
+        <div className="relative z-10 flex flex-col gap-5">
+          {/* ICON */}
+          <div
+            className="w-11 h-11 rounded-xl flex items-center justify-center"
+            style={{ backgroundColor: `${item.color}22` }}
+          >
+            <Icon size={20} style={{ color: item.color }} />
+          </div>
+
+          {/* TEXT */}
+          <p className="text-base text-slate-700 leading-relaxed">
+            <span className="font-medium text-slate-900">
+              {item.text.split(" ").slice(0, 2).join(" ")}
+            </span>{" "}
+            {item.text.split(" ").slice(2).join(" ")}
+          </p>
         </div>
+      </motion.div>
+    );
+  })}
+</div>
+
 
         {/* Transition text */}
-        <p className="mt-20 max-w-3xl mx-auto text-lg text-slate-600 leading-relaxed">
-          If you answered{" "}
-          <span className="font-semibold text-slate-900">“Yes”</span> to any of
-          these, a{" "}
-          <span className="font-semibold text-emerald-600">
-            free 20-minute consultation
-          </span>{" "}
-          could help you understand what your body has been trying to tell you.
-        </p>
+        <p className="mt-20 max-w-3xl mx-auto text-lg text-slate-600 leading-relaxed italic">
+  Agar aapka jawab{" "}
+  <span className="font-semibold text-slate-900 not-italic">
+    'Haan' hai,
+  </span>{" "}
+  <span className="font-semibold text-emerald-600 not-italic">
+    toh yeh 20-minutes ka session
+  </span>{" "}
+  ki call aapki life ka turning point ho sakti hai.
+</p>
+
 
         {/* CTA */}
         <motion.a href="/book-call" whileTap={{ scale: 0.95 }}>

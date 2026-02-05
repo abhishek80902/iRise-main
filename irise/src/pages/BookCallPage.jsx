@@ -56,18 +56,20 @@ export default function BookCallPage() {
           className="text-center mb-24"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900">
-            Schedule Your{" "}
+            Apni{" "}
             <span className="text-blue-600">
               Free 20-Minute Health Consultation
-            </span>
+            </span>{" "}
+            Book Karein
           </h1>
 
           <div className="mt-4 w-24 h-1 bg-blue-600 rounded-full mx-auto" />
 
-          <p className="mt-6 text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            A focused conversation to understand how your body is functioning
-            today and how simple hydration-based changes may support better
-            balance, energy, and recovery.
+          <p className="mt-6 text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed italic">
+            Ek focused aur relaxed conversation, jisme hum samajhne ki
+            koshish karte hain ki aapki body abhi kaise function kar rahi hai
+            aur kaise simple hydration-based changes better balance,
+            energy aur recovery ko support kar sakte hain.
           </p>
 
           {/* TRUST BADGE */}
@@ -85,18 +87,18 @@ export default function BookCallPage() {
             {[
               {
                 icon: Clock,
-                title: "Clear Understanding",
-                desc: "Gain insight into what may be affecting your digestion, energy, or internal balance."
+                title: "Clear Samajh",
+                desc: "Yeh samajhne mein madad milegi ki digestion, energy ya internal balance ko kya affect kar raha ho sakta hai."
               },
               {
                 icon: PhoneCall,
                 title: "Personal Perspective",
-                desc: "Discuss your lifestyle, hydration patterns, and health history in a relaxed setting."
+                desc: "Aap apni lifestyle, hydration habits aur health history ek relaxed environment mein discuss kar sakte hain."
               },
               {
                 icon: CalendarCheck,
                 title: "Practical Direction",
-                desc: "Walk away with clarity on whether Water Therapy fits your body and routine."
+                desc: "Is clarity ke saath call end hoti hai ki Water Therapy aapki body aur routine ke liye fit ho sakti hai ya nahi."
               }
             ].map((item, i) => {
               const Icon = item.icon;
@@ -139,11 +141,13 @@ export default function BookCallPage() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-slate-600 text-lg leading-relaxed max-w-xl"
+              className="text-slate-600 text-lg leading-relaxed max-w-xl italic"
             >
-              Many people reach this call after trying multiple approaches.
-              This session helps bring clarity by looking at the body as a
-              system gently, logically, and without pressure.
+              Kaafi log is call tak tab pahuchte hain jab unhone multiple
+              solutions try kar liye hote hain.  
+              Yeh session body ko ek system ke roop mein
+              calmly, logically aur bina kisi pressure ke
+              samajhne mein madad karta hai.
             </motion.p>
           </div>
 
@@ -168,7 +172,7 @@ export default function BookCallPage() {
               flex justify-between items-center
             ">
               <p className="font-semibold text-slate-900">
-                Choose a time that works for you
+                Apne liye convenient time choose karein
               </p>
               <span className="text-xs text-slate-500">
                 Secure & private
@@ -177,7 +181,7 @@ export default function BookCallPage() {
 
             {!calendlyLoaded && (
               <div className="absolute inset-0 flex items-center justify-center text-slate-500">
-                Loading availability…
+                Availability load ho rahi hai…
               </div>
             )}
 

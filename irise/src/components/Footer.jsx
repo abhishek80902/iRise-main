@@ -4,20 +4,20 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    q: "Who is this consultation meant for?",
-    a: "This session is suitable for people experiencing digestion problems, low energy, joint discomfort, or anyone looking for a natural and sustainable way to improve overall health."
+    q: "Yeh consultation kis ke liye hai?",
+    a: "Yeh session un logon ke liye hai jo digestion issues, low energy, joint discomfort face kar rahe hain — ya phir jo ek natural aur sustainable tareeke se apni overall health improve karna chahte hain."
   },
   {
-    q: "How is Water Therapy different from medicines?",
-    a: "Water Therapy focuses on improving hydration, oxygen flow, and internal balance so the body can heal naturally, instead of suppressing symptoms with long-term medication."
+    q: "Water Therapy medicines se kaise alag hai?",
+    a: "Water Therapy hydration, oxygen flow aur internal balance ko improve karti hai, taaki body naturally heal kar sake — bina symptoms ko suppress kiye."
   },
   {
-    q: "Is this a medical or diagnostic consultation?",
-    a: "No. This is a lifestyle and hydration guidance session. No medicines are prescribed, and it does not replace medical diagnosis or professional treatment."
+    q: "Kya yeh medical ya diagnostic consultation hai?",
+    a: "Nahi. Yeh lifestyle aur hydration guidance session hai. Ismein koi medicines prescribe nahi hoti aur yeh medical diagnosis ka replacement nahi hai."
   },
   {
-    q: "What can I expect after the 20-minute call?",
-    a: "You will gain clarity on whether Water Therapy may support your condition and what practical steps you can take next — without pressure, sales tactics, or obligation."
+    q: "20-minute call ke baad mujhe kya clarity milegi?",
+    a: "Aap samajh paayenge ki Water Therapy aapke liye kaise kaam kar sakti hai aur next practical steps kya ho sakte hain — bina kisi pressure ke."
   }
 ];
 
@@ -27,18 +27,34 @@ export default function FaqAndFooter() {
   return (
     <>
       {/* ================= FAQ SECTION ================= */}
-      <section className="relative bg-[#F7F9FC] py-28">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="relative py-28 overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#EEF2F7]">
+
+        {/* subtle grid background (SAME AS PREVIOUS SECTIONS) */}
+        <div
+          className="absolute inset-0 opacity-[0.12]"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, #E5E7EB 1px, transparent 1px),
+              linear-gradient(to bottom, #E5E7EB 1px, transparent 1px)
+            `,
+            backgroundSize: "52px 52px"
+          }}
+        />
+
+        <div className="relative z-10 max-w-4xl mx-auto px-6">
 
           {/* Heading */}
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
-              Frequently Asked Questions
+              Aapke Kuch Questions Ke Answers
             </h2>
+
             <div className="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded-full" />
-            <p className="mt-5 text-slate-600 text-lg max-w-2xl mx-auto">
-              Clear answers to help you decide calmly and confidently.
-            </p>
+
+           <p className="mt-5 text-slate-600 text-lg max-w-2xl mx-auto italic text-center">
+  Taaki aap bina confusion aur pressure ke decision le sakein.
+</p>
+
           </div>
 
           {/* FAQ Items */}
@@ -54,7 +70,6 @@ export default function FaqAndFooter() {
                     rounded-2xl
                     border border-slate-200
                     shadow-sm
-                    transition
                   "
                 >
                   <button
@@ -97,19 +112,19 @@ export default function FaqAndFooter() {
       </section>
 
       {/* ================= FOOTER ================= */}
-      <footer className="bg-white border-t border-slate-200">
+      <footer className="relative bg-white border-t border-slate-200">
 
         <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-3 gap-16">
 
           {/* BRAND */}
           <div>
             <h3 className="text-2xl font-semibold text-slate-900">
-             VitalSync Health
+              RecoverNow
             </h3>
 
             <p className="mt-4 text-sm text-slate-600 leading-relaxed max-w-sm">
-              A calm, natural approach focused on restoring hydration, internal
-              balance, and long-term wellbeing without dependency on medicines.
+              Ek natural aur calm approach jo hydration, internal balance
+              aur long-term wellbeing par focus karta hai bina medicines par dependency ke.
             </p>
 
             {/* Socials */}
@@ -117,28 +132,14 @@ export default function FaqAndFooter() {
               <a
                 href="#"
                 aria-label="Instagram"
-                className="
-                  p-2.5 rounded-full
-                  border border-slate-200
-                  text-slate-500
-                  hover:text-blue-600
-                  hover:border-blue-300
-                  transition
-                "
+                className="p-2.5 rounded-full border border-slate-200 text-slate-500 hover:text-blue-600 hover:border-blue-300 transition"
               >
                 <Instagram size={18} />
               </a>
               <a
                 href="#"
                 aria-label="LinkedIn"
-                className="
-                  p-2.5 rounded-full
-                  border border-slate-200
-                  text-slate-500
-                  hover:text-blue-600
-                  hover:border-blue-300
-                  transition
-                "
+                className="p-2.5 rounded-full border border-slate-200 text-slate-500 hover:text-blue-600 hover:border-blue-300 transition"
               >
                 <Linkedin size={18} />
               </a>
@@ -172,13 +173,13 @@ export default function FaqAndFooter() {
         {/* DISCLAIMER */}
         <div className="border-t border-slate-200 py-8 text-center text-xs text-slate-500 px-6">
           <p className="max-w-4xl mx-auto leading-relaxed">
-            This website is for educational and guidance purposes only.
-            Water Therapy does not replace medical diagnosis or treatment.
-            Always consult a qualified healthcare professional for medical concerns.
+            Yeh website sirf educational aur guidance purpose ke liye hai.
+            Water Therapy medical diagnosis ya treatment ka replacement nahi hai.
+            Kisi bhi medical concern ke liye qualified healthcare professional se salah zaroor lein.
           </p>
 
           <p className="mt-3">
-            © 2026 Water Therapy. All rights reserved.
+            © 2026 RecoverNow. All rights reserved.
           </p>
         </div>
       </footer>

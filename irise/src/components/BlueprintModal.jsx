@@ -2,16 +2,16 @@ import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import guidePhoto from "../assets/1753246082030.jpg";
 
-/* HEALTH-FOCUSED POINTS */
+/* =======================
+   AUTHORITY POINTS (HINGLISH)
+======================= */
 const points = [
-  "Helped people improve digestion, energy, and overall balance by understanding how hydration affects the body",
-  "Looks at the real cause of health problems instead of just covering up symptoms",
-  "Uses simple Water Therapy principles to help organs work better naturally",
-  "No medicines, no procedures just guidance that works with the body",
-  "Trusted by people who want long term improvement, not temporary relief"
+  "Logon ki digestion, energy aur overall balance better karne mein madad ki sirf ye samajhkar ki body paani ko kaise use karti hai",
+  "Symptoms chupane ke bajaye, pehle ye samajhne par focus karta hai ki problem ho kyun rahi hai",
+  "Simple Water Therapy principles use karta hai taaki organs naturally better kaam kar paayein",
+  "Na medicines, na treatments sirf aisi guidance jo body ke saath kaam kare, against nahi",
+  "Un logon ka bharosa jinhone temporary relief nahi, balki long term health clarity chuni"
 ];
-
-
 
 export default function AuthoritySection() {
   return (
@@ -31,7 +31,7 @@ export default function AuthoritySection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 
-        {/* CARD (UNCHANGED STYLE) */}
+        {/* MAIN CARD */}
         <div className="
           rounded-[28px]
           bg-gradient-to-br from-[#050A2A] via-[#0A1445] to-[#040821]
@@ -50,6 +50,7 @@ export default function AuthoritySection() {
             className="relative flex justify-center"
           >
             <div className="relative">
+
               {/* glow ring */}
               <div className="
                 absolute inset-0
@@ -72,28 +73,25 @@ export default function AuthoritySection() {
 
               {/* NAME + DESIGNATION */}
               <div className="mt-6 text-center relative">
+                <span className="
+                  absolute -top-4 left-1/2 -translate-x-1/2
+                  text-white
+                  text-4xl
+                  font-serif
+                  select-none
+                ">
+                  “
+                </span>
 
-  {/* subtle quote icon */}
-  <span className="
-    absolute -top-4 left-1/2 -translate-x-1/2
-    text-white
-    text-4xl
-    font-serif
-    select-none
-  ">
-    “
-  </span>
+                <p className="text-xl font-semibold text-white">
+                  Abhishek
+                </p>
 
-  <p className="text-xl font-semibold text-white">
-    Shubh
-  </p>
-
-  <div className="mt-1 inline-flex items-center gap-2 text-sm text-white/60">
-    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-    Founder VitalSync Health
-  </div>
-</div>
-
+                <div className="mt-1 inline-flex items-center gap-2 text-sm text-white/60">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  Founder, RecoverNow
+                </div>
+              </div>
 
             </div>
           </motion.div>
@@ -107,11 +105,11 @@ export default function AuthoritySection() {
             className="flex flex-col justify-center"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-10 text-white">
-              Who Will Guide Your{" "}
+              Kaun Aapki{" "}
               <span className="text-blue-400">
                 Healing Journey
-              </span>
-              ?
+              </span>{" "}
+              Guide Karega?
             </h2>
 
             <ul className="space-y-6">
@@ -132,12 +130,14 @@ export default function AuthoritySection() {
 
             {/* TRUST LINE */}
             <p className="mt-8 text-white/60 text-sm max-w-xl">
-              Guidance focused on helping the body heal naturally
-              without dependency on long-term medication.
+              Yeh guidance body ko force nahi karti  
+              balki usse naturally heal karne ka mauka deti hai.
             </p>
           </motion.div>
 
         </div>
+
+        {/* CTA */}
         <div className="mt-16 flex justify-center">
           <motion.a href="/book-call" whileTap={{ scale: 0.95 }}>
             <motion.button
@@ -163,6 +163,7 @@ export default function AuthoritySection() {
             </motion.button>
           </motion.a>
         </div>
+
       </div>
     </section>
   );

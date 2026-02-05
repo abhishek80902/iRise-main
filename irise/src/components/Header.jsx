@@ -62,7 +62,7 @@ export default function Header() {
               className="w-8 h-8 sm:w-9 sm:h-9"
             />
             <span className="font-semibold text-slate-900 text-base sm:text-lg">
-              VitalSync Health
+              RecoverNow
             </span>
           </motion.a>
 
@@ -94,32 +94,6 @@ export default function Header() {
         </motion.div>
       </motion.header>
 
-      {/* BOTTOM FLOATING CTA — MOBILE */}
-      <motion.div
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.6, duration: 0.5 }}
-        className="fixed bottom-4 left-0 right-0 z-40 flex justify-center sm:hidden"
-      >
-        <motion.a
-          href="/book-call"
-          whileTap={{ scale: 0.92 }}
-          transition={{ type: "spring", stiffness: 500, damping: 20 }}
-        >
-          <motion.button
-            className="
-              px-7 py-3
-              rounded-full
-              bg-gradient-to-r from-blue-600 to-emerald-500
-              text-white
-              font-semibold text-sm
-              shadow-xl
-            "
-          >
-            Book Free 1:1 Session
-          </motion.button>
-        </motion.a>
-      </motion.div>
     </>
   );
 }

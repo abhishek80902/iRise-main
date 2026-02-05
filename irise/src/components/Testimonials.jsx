@@ -205,10 +205,13 @@ export default function HealthTestimonials() {
 
           <div className="mt-4 w-24 h-1 bg-blue-600 rounded-full mx-auto" />
 
-          <p className="mt-8 text-slate-700 max-w-2xl mx-auto text-lg leading-relaxed">
-            Real stories from people who stopped fighting their body
-            and started supporting it.
-          </p>
+          <p className="mt-8 text-slate-700 max-w-2xl mx-auto text-lg leading-relaxed italic">
+  Real stories from people who stopped fighting their body
+  <span className="not-italic font-medium">
+    {" "}and started supporting it.
+  </span>
+</p>
+
 
           <div className="mt-4 inline-flex items-center gap-2 px-5 py-2 rounded-full bg-emerald-50 text-emerald-700 text-sm font-medium">
             <ShieldCheck size={16} />

@@ -3,31 +3,32 @@ import {
   HeartPulse,
   Droplets,
   Activity,
-  ShieldCheck
+  ShieldCheck,
+  Info
 } from "lucide-react";
 
 const points = [
   {
     title: "Personal Health Analysis",
-    desc: "We understand your health history, daily routine, and hydration patterns without prescribing any medicines.",
+    desc: "Hum aapki health history, daily routine aur hydration habits ko samajhte hain bina koi medicines prescribe kiye.",
     icon: HeartPulse,
     color: "#2563EB"
   },
   {
     title: "How Water Therapy Fits You",
-    desc: "Based on your body and lifestyle, we explain how Water Therapy can support your internal healing process.",
+    desc: "Aapke body aur lifestyle ke hisaab se samjhaya jata hai ki Water Therapy aapki internal healing ko kaise support kar sakti hai.",
     icon: Droplets,
     color: "#10B981"
   },
   {
     title: "Improving Organ Efficiency",
-    desc: "Learn how proper hydration helps organs function more efficiently and reduces internal stress on the body.",
+    desc: "Aap samajhte hain ki sahi hydration kaise organs ko better kaam karne mein help karta hai aur body ke stress ko kam karta hai.",
     icon: Activity,
     color: "#6366F1"
   },
   {
     title: "Healing Without Disrupting Life",
-    desc: "Discover how healing can begin without changing your daily routine or adding extra pressure.",
+    desc: "Ye bataya jata hai ki bina routine badle, healing process kaise dheere dheere shuru ho sakta hai bina extra pressure ke.",
     icon: ShieldCheck,
     color: "#059669"
   }
@@ -36,8 +37,7 @@ const points = [
 export default function ConsultationRoadmap() {
   return (
     <section className="relative py-20 overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#EEF2F7]">
-
-      {/* Subtle grid */}
+      {/* SUBTLE GRID */}
       <div
         className="absolute inset-0 opacity-[0.14]"
         style={{
@@ -50,8 +50,7 @@ export default function ConsultationRoadmap() {
       />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
-
-        {/* ================= HEADING ================= */}
+        {/* HEADING */}
         <motion.div
           initial={{ opacity: 0, y: 36 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -60,24 +59,34 @@ export default function ConsultationRoadmap() {
           className="text-center mb-24"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900">
-            A 20-Minute Session That Can{" "}
+            20 Minutes Jo Aapki Health Ka{" "}
             <span className="text-blue-600">
-              Change Your Health Roadmap
+              Roadmap Change Kar Denge
             </span>
           </h2>
 
           <div className="mt-4 w-24 h-1 bg-blue-600 rounded-full mx-auto" />
 
-          <p className="mt-8 max-w-3xl mx-auto text-lg text-slate-600 leading-relaxed">
-            This is not a sales call and no medicines are prescribed.
-            <br />
-            We simply help you understand what your body needs to begin healing naturally.
-          </p>
+          <p className="mt-8 max-w-3xl mx-auto text-lg text-slate-600 leading-relaxed italic text-center">
+  Is call par hum{" "}
+  <span className="not-italic font-semibold text-slate-800">
+    koi medicine prescribe nahi
+  </span>{" "}
+  karenge.
+  <br />
+  <span className="block mt-2">
+    Hum sirf aapki{" "}
+    <span className="not-italic font-semibold text-emerald-600">
+      lifestyle aur body hydration
+    </span>{" "}
+    ko analyze karenge.
+  </span>
+</p>
+
         </motion.div>
 
-        {/* ================= ROADMAP GRID ================= */}
+        {/* ROADMAP */}
         <div className="relative grid gap-10 sm:grid-cols-2">
-
           {points.map((item, i) => {
             const Icon = item.icon;
 
@@ -89,50 +98,29 @@ export default function ConsultationRoadmap() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.12 }}
                 whileHover={{ y: -6 }}
-                className="
-                  relative
-                  rounded-3xl
-                  bg-white
-                  border border-slate-200
-                  p-8
-                  shadow-lg
-                "
+                className="relative rounded-3xl bg-white border border-slate-200 p-8 shadow-md"
               >
-                {/* animated border glow */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute -inset-[2px] rounded-3xl blur-lg pointer-events-none"
+                {/* SOFT EDGE GLOW */}
+                <div
+                  className="absolute inset-0 rounded-3xl pointer-events-none"
                   style={{
-                    background: `linear-gradient(135deg, ${item.color}33, transparent)`
+                    background: `linear-gradient(180deg, ${item.color}12, transparent 70%)`
                   }}
                 />
 
                 <div className="relative z-10 flex gap-6 items-start">
-
-                  {/* ICON */}
-                  <motion.div
-                    whileHover={{ rotate: -6, scale: 1.06 }}
-                    transition={{ type: "spring", stiffness: 260, damping: 18 }}
-                    className="shrink-0"
+                  <div
+                    className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ backgroundColor: `${item.color}22` }}
                   >
-                    <div
-                      className="w-14 h-14 rounded-xl flex items-center justify-center"
-                      style={{ backgroundColor: `${item.color}22` }}
-                    >
-                      <Icon size={24} style={{ color: item.color }} />
-                    </div>
-                  </motion.div>
+                    <Icon size={24} style={{ color: item.color }} />
+                  </div>
 
-                  {/* TEXT */}
                   <div>
                     <h3 className="text-xl font-semibold text-slate-900 mb-2">
                       {item.title}
                     </h3>
-
                     <div className="w-10 h-0.5 bg-slate-300 rounded-full mb-3" />
-
                     <p className="text-slate-600 leading-relaxed">
                       {item.desc}
                     </p>
@@ -143,38 +131,51 @@ export default function ConsultationRoadmap() {
           })}
         </div>
 
-        {/* ================= TRUST STATEMENT ================= */}
+        {/* REASSURANCE BOX — VISUAL */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-24 text-center"
+          className="mt-24 max-w-4xl mx-auto"
         >
-          <div className="mt-24 max-w-3xl mx-auto text-center">
-  <p className="
-    relative
-    text-slate-700
-    text-lg
-    leading-relaxed
-    bg-white
-    border border-slate-200
-    rounded-2xl
-    px-8 py-6
-    shadow-sm
-  ">
-    If you’ve tried multiple solutions and still don’t feel better,
-    this call helps you understand{" "}
-    <span className="font-semibold text-slate-900">
-      why your body hasn’t responded yet
-    </span>{" "}
-    and what can be done next.
-  </p>
-</div>
+          <div className="
+            relative
+            flex gap-5 items-start
+            bg-gradient-to-br from-white via-slate-50 to-white
+            border border-slate-200
+            rounded-2xl
+            px-8 py-7
+            shadow-sm
+          ">
+            {/* LEFT ACCENT */}
+            <div className="absolute left-0 top-6 bottom-6 w-1 rounded-full bg-gradient-to-b from-blue-500 to-emerald-500" />
 
+            {/* ICON */}
+            <div className="
+              w-12 h-12
+              rounded-xl
+              flex items-center justify-center
+              bg-blue-50
+              shrink-0
+            ">
+              <Info className="w-6 h-6 text-blue-600" />
+            </div>
+
+            {/* TEXT */}
+           <p className="text-slate-700 text-lg leading-relaxed italic">
+  Agar aapne kaafi solutions try kiye hain aur phir bhi better feel
+  nahi kar rahe,{" "}
+  <span className="font-semibold text-slate-900 not-italic">
+    yeh call aapko samjhata hai ki body ne ab tak respond kyun nahi kiya
+  </span>{" "}
+  aur aage kaunsa step sahi ho sakta hai.
+</p>
+
+          </div>
         </motion.div>
 
-        {/* ================= CTA ================= */}
+        {/* CTA */}
         <div className="mt-16 flex justify-center">
           <motion.a href="/book-call" whileTap={{ scale: 0.95 }}>
             <motion.button
@@ -200,7 +201,6 @@ export default function ConsultationRoadmap() {
             </motion.button>
           </motion.a>
         </div>
-
       </div>
     </section>
   );
