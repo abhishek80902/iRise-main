@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import {
   Brain,
@@ -14,8 +14,6 @@ import heroVideo from "../assets/water therapy hr ad 04 f.mp4";
 export default function Hero() {
   const { scrollY } = useScroll();
   const videoRef = useRef(null);
-  const ctaRef = useRef(null);
-  const showCTA = useInView(ctaRef, { margin: "-120px" });
 
   const [soundOn, setSoundOn] = useState(false);
   const [playing, setPlaying] = useState(true);
@@ -26,11 +24,10 @@ export default function Hero() {
 
   /* TYPING EFFECT */
   const phrases = [
-  "Ab Waqt Hai Unhe ‘Jadh’ Se Khatam Karne Ka",
-  "Ab Samay Hai Root Cause Ko Eliminate Karne Ka",
-  "Cause Ko Fix Karo, Sirf Symptoms Ko Nahi"
-];
-
+    "Ab Waqt Hai Unhe ‘Jadh’ Se Khatam Karne Ka",
+    "Ab Samay Hai Root Cause Ko Eliminate Karne Ka",
+    "Cause Ko Fix Karo, Sirf Symptoms Ko Nahi"
+  ];
 
   const [typed, setTyped] = useState("");
   const [index, setIndex] = useState(0);
@@ -96,9 +93,8 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-[#F5F6FA]" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#F5F6FA]">
+      {/* SUBTLE GRID */}
       <div
         className="absolute inset-0 opacity-[0.22]"
         style={{
@@ -111,6 +107,7 @@ export default function Hero() {
       />
 
       <div className="relative z-10 max-w-6xl px-5 pt-28 text-center">
+
         {/* HEADLINE */}
         <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#0B1C39]">
           Kab Tak Sirf{" "}
@@ -121,7 +118,7 @@ export default function Hero() {
           ko Manage Karenge?
           <br />
 
-          <span className="relative inline-flex flex-wrap justify-center mt-4 text-blue-600 min-h-[2.6em]">
+          <span className="relative inline-flex justify-center mt-4 text-blue-600 min-h-[2.6em]">
             <span className="absolute opacity-0">
               Ab Waqt Hai Unhe ‘Jadh’ Se Khatam Karne Ka
             </span>
@@ -134,15 +131,14 @@ export default function Hero() {
 
         {/* SUBHEAD */}
         <p className="mt-6 max-w-3xl mx-auto text-gray-600 text-xl leading-relaxed italic">
-  Agar aap dawaiyan kha-kha kar thak chuke hain aur apni purani zindagi
-  wapas chahte hain, toh discover kijiye{" "}
-  <span className="relative inline-block font-bold text-emerald-700 not-italic">
-    <em>Water Therapy</em>
-    <span className="block mx-auto mt-1 w-14 h-0.5 bg-emerald-500 rounded-full" />
-  </span>{" "}
-  ki science jo body ko andar se heal karti hai.
-</p>
-
+          Agar aap dawaiyan kha-kha kar thak chuke hain aur apni purani zindagi
+          wapas chahte hain, toh discover kijiye{" "}
+          <span className="relative inline-block font-bold text-emerald-700 not-italic">
+            <em>Water Therapy</em>
+            <span className="block mx-auto mt-1 w-14 h-0.5 bg-emerald-500 rounded-full" />
+          </span>{" "}
+          ki science jo body ko andar se heal karti hai.
+        </p>
 
         {/* FEATURES */}
         <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 justify-items-center">
@@ -169,23 +165,19 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* TRUSTED BY */}
-        <div className="mt-14 text-center">
-          <p className="text-sm uppercase tracking-widest text-gray-400 mb-4">
-            Trusted by
-          </p>
-          <div className="flex flex-wrap justify-center gap-8 text-gray-500 text-sm font-medium">
-            <span>HealthLine</span>
-            <span>Times Wellness</span>
-            <span>Medical Journal</span>
-            <span>Ayush Network</span>
-          </div>
-        </div>
-
-        {/* VIDEO */}
+        {/* VIDEO (FULLY VISIBLE 9:16) */}
         <motion.div
           style={{ y: videoY, scale: videoScale }}
-          className="relative mt-14 mx-auto w-full max-w-5xl min-h-[260px] sm:min-h-[420px] md:min-h-[520px] rounded-[28px] overflow-hidden border border-black/10 shadow-2xl"
+          className="
+            relative mt-16 mx-auto
+            w-full max-w-sm sm:max-w-md md:max-w-lg
+            aspect-[9/16]
+            rounded-[28px]
+            overflow-hidden
+            border border-black/10
+            shadow-2xl
+            bg-black
+          "
         >
           <video
             ref={videoRef}
@@ -193,7 +185,7 @@ export default function Hero() {
             loop
             muted={!soundOn}
             playsInline
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-contain"
           >
             <source src={heroVideo} type="video/mp4" />
           </video>
@@ -223,14 +215,20 @@ export default function Hero() {
             <motion.button
               whileHover={{ y: -3, scale: 1.05 }}
               transition={{ type: "spring", stiffness: 260, damping: 18 }}
-              className="px-16 py-5 rounded-full font-semibold text-white bg-gradient-to-r from-emerald-500 to-blue-600 shadow-xl"
+              className="
+                px-16 py-5
+                rounded-full
+                font-semibold
+                text-white
+                bg-gradient-to-r from-emerald-500 to-blue-600
+                shadow-xl
+              "
             >
               Book Your 1:1 Session Now
             </motion.button>
           </motion.a>
         </div>
 
-        <div ref={ctaRef} className="h-10" />
       </div>
     </section>
   );

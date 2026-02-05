@@ -208,13 +208,14 @@ export default function WaterTherapySection() {
             Science-backed • Drug-free • Non-invasive
           </div>
 
-          <p className="text-slate-600 text-lg leading-relaxed">
-            Water Therapy body ko force nahi karti.
-            <br />
-            <span className="font-semibold text-slate-900">
-              Ye sirf internal barriers hataati hai, taaki healing naturally ho sake.
-            </span>
-          </p>
+          <p className="text-slate-600 text-lg leading-relaxed italic text-center">
+  Water Therapy body ko force nahi karti.
+  <br />
+  <span className="font-semibold text-slate-900 not-italic">
+    Ye sirf internal barriers hataati hai, taaki healing naturally ho sake.
+  </span>
+</p>
+
         </div>
 
         {/* CTA */}

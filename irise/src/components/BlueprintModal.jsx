@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
-import guidePhoto from "../assets/1753246082030.jpg";
+import guidePhoto from "../assets/react.svg";
 
 /* =======================
    AUTHORITY POINTS (HINGLISH)
@@ -60,7 +60,7 @@ export default function AuthoritySection() {
               " />
 
               <img
-                src={guidePhoto}
+                src="../assets/react.svg"
                 alt="Health Guide"
                 className="
                   relative
@@ -84,7 +84,7 @@ export default function AuthoritySection() {
                 </span>
 
                 <p className="text-xl font-semibold text-white">
-                  Abhishek
+                  XYZ
                 </p>
 
                 <div className="mt-1 inline-flex items-center gap-2 text-sm text-white/60">
