@@ -115,7 +115,9 @@ Mujhe Water Therapy ke baare mein baat karni hai.`;
                   onChange={(e) =>
                     setForm({ ...form, name: e.target.value.replace(/[^a-zA-Z\s]/g, "") })
                   }
-                  className="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300"
+                  className="w-full pl-11 pr-4 py-3
+    rounded-xl border border-slate-300
+    text-slate-800 placeholder-slate-400"
                 />
               </div>
 
@@ -132,7 +134,9 @@ Mujhe Water Therapy ke baare mein baat karni hai.`;
                     const value = e.target.value.replace(/\D/g, "");
                     if (value.length <= 10) setForm({ ...form, phone: value });
                   }}
-                  className="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300"
+                  className="w-full pl-11 pr-4 py-3
+    rounded-xl border border-slate-300
+    text-slate-800 placeholder-slate-400"
                 />
                 {form.phone && !isValidIndianNumber(form.phone) && (
                   <p className="mt-1 text-xs text-red-500">
@@ -151,7 +155,9 @@ Mujhe Water Therapy ke baare mein baat karni hai.`;
                   onChange={(e) =>
                     setForm({ ...form, city: e.target.value.replace(/[^a-zA-Z\s]/g, "") })
                   }
-                  className="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300"
+                  className="w-full pl-11 pr-4 py-3
+    rounded-xl border border-slate-300
+    text-slate-800 placeholder-slate-400"
                 />
               </div>
 
