@@ -88,7 +88,7 @@ export default function Header() {
                 whitespace-nowrap
               "
             >
-              Book Free 1:1 Session
+              Book Free Session
             </motion.button>
           </motion.a>
         </motion.div>
