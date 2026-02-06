@@ -60,8 +60,7 @@ export default function AuthoritySection() {
                 <div className="absolute inset-0 rounded-full border-2 border-blue-500/40 blur-sm" />
 
                 <img
-                  src={guidePhoto}
-                  alt="Health Guide"
+                  src="../assets/react.svg"
                   className="relative w-[280px] h-[280px] object-cover rounded-full shadow-2xl"
                 />
 
