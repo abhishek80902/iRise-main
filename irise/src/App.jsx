@@ -18,7 +18,6 @@ export default function App() {
         {/* ROUTES */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/book-call" element={<BookCallPage />} />
         </Routes>
 
         {/* GLOBAL FOOTER */}

@@ -6,10 +6,14 @@ import {
 } from "framer-motion";
 import { useState } from "react";
 import Logo from "../assets/react.svg";
+import ContactFormModal from "../components/Modal.jsx"; // ✅ IMPORT FORM
 
 export default function Header() {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
+
+  /* ✅ MODAL STATE */
+  const [modalOpen, setModalOpen] = useState(false);
 
   /* Hide on scroll down, show on scroll up */
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -66,34 +70,32 @@ export default function Header() {
             </span>
           </motion.a>
 
-          {/* CTA */}
-          <motion.a
-            href="/book-call"
+          {/* CTA — OPEN FORM (NO REDIRECT) */}
+          <motion.button
             whileTap={{ scale: 0.92 }}
             transition={{ type: "spring", stiffness: 500, damping: 20 }}
-            className="pointer-events-auto"
+            onClick={() => setModalOpen(true)} // ✅ ONLY CHANGE
+            className="
+              px-5 py-2.5
+              rounded-full
+              bg-gradient-to-r from-blue-600 to-emerald-500
+              text-white
+              text-sm font-semibold
+              shadow-md
+              whitespace-nowrap
+            "
           >
-            <motion.button
-              whileHover={{
-                y: -1,
-                boxShadow: "0 8px 20px rgba(37,99,235,0.25)"
-              }}
-              className="
-                px-5 py-2.5
-                rounded-full
-                bg-gradient-to-r from-blue-600 to-emerald-500
-                text-white
-                text-sm font-semibold
-                shadow-md
-                whitespace-nowrap
-              "
-            >
-              Book Free Session
-            </motion.button>
-          </motion.a>
+            Call Now
+          </motion.button>
         </motion.div>
       </motion.header>
 
+      {/* ✅ FORM MODAL */}
+      <ContactFormModal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        mode="call"
+      />
     </>
   );
 }
