@@ -177,54 +177,63 @@ export default function PainSection() {
           </p>
 
           {/* CTA + WHATSAPP */}
-          <div className="mt-12 flex flex-col sm:flex-row justify-center gap-5">
-            {/* CALL */}
-            <motion.button
-              onClick={() => {
-                setMode("call");
-                setModalOpen(true);
-              }}
-              whileHover={{
-                y: -3,
-                scale: 1.05,
-                boxShadow: "0 16px 36px rgba(16,185,129,0.35)"
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="
-                px-14 py-5
-                rounded-full
-                font-semibold
-                text-white
-                bg-gradient-to-r from-emerald-500 to-blue-600
-                shadow-xl
-              "
-            >
-              Call Now
-            </motion.button>
+          <div className="mt-16 flex justify-center gap-4 px-3">
 
-            {/* WHATSAPP */}
-            <motion.button
-              onClick={() => {
-                setMode("whatsapp");
-                setModalOpen(true);
-              }}
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="
-                px-12 py-5
-                rounded-full
-                font-semibold
-                text-emerald-700
-                bg-emerald-50
-                border border-emerald-200
-                shadow-sm
-                flex items-center gap-3
-              "
-            >
-              <MessageCircle size={20} />
-              WhatsApp Now
-            </motion.button>
-          </div>
+  {/* CALL */}
+  <motion.button
+    onClick={() => {
+      setMode("call");
+      setModalOpen(true);
+    }}
+    whileHover={{ y: -3, scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="
+      w-full sm:w-auto
+      max-w-[260px]
+      px-6 sm:px-12
+      py-4
+      rounded-full
+      font-semibold
+      text-white
+      bg-gradient-to-r from-emerald-500 to-blue-600
+      shadow-xl
+      whitespace-nowrap
+      text-sm sm:text-base
+    "
+  >
+    Call Now
+  </motion.button>
+
+  {/* WHATSAPP */}
+  <motion.button
+    onClick={() => {
+      setMode("whatsapp");
+      setModalOpen(true);
+    }}
+    whileHover={{ y: -2 }}
+    whileTap={{ scale: 0.95 }}
+    className="
+      w-full sm:w-auto
+      max-w-[260px]
+      px-6 sm:px-10
+      py-4
+      rounded-full
+      font-semibold
+      text-emerald-700
+      bg-emerald-50
+      border border-emerald-200
+      shadow-sm
+      flex items-center justify-center gap-2
+      whitespace-nowrap
+      text-sm sm:text-base
+    "
+  >
+    <MessageCircle size={18} />
+    WhatsApp
+  </motion.button>
+
+</div>
+
 
           {/* Trust */}
           <p className="mt-5 text-sm text-slate-500">

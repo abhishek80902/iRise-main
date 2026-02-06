@@ -1,11 +1,6 @@
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import {
-  ShieldCheck,
-  ChevronLeft,
-  ChevronRight,
-  Star
-} from "lucide-react";
+import { ShieldCheck, Star } from "lucide-react";
 
 /* =======================
    TESTIMONIAL DATA
@@ -52,7 +47,7 @@ const testimonials = [
 const looped = [...testimonials, ...testimonials];
 
 /* =======================
-   INITIAL AVATAR
+   AVATAR
 ======================= */
 
 function Avatar({ name }) {
@@ -77,13 +72,7 @@ function Avatar({ name }) {
    CARD
 ======================= */
 
-function TestimonialCard({
-  name,
-  condition,
-  text,
-  rating,
-  active
-}) {
+function TestimonialCard({ name, condition, text, rating, active }) {
   return (
     <motion.div
       animate={{
@@ -107,13 +96,9 @@ function TestimonialCard({
         <Avatar name={name} />
 
         <div>
-          <p className="font-semibold text-slate-900">
-            {name}
-          </p>
+          <p className="font-semibold text-slate-900">{name}</p>
           <span className="block mt-1 w-10 h-0.5 bg-blue-600 rounded-full" />
-          <p className="text-sm text-slate-500 mt-1">
-            {condition}
-          </p>
+          <p className="text-sm text-slate-500 mt-1">{condition}</p>
         </div>
       </div>
 
@@ -161,11 +146,11 @@ export default function HealthTestimonials() {
   const [index, setIndex] = useState(0);
   const total = testimonials.length;
 
-  /* AUTO LOOP (RIGHT → LEFT) */
+  /* AUTO SLIDE */
   useEffect(() => {
     if (!inView) return;
 
-    const interval = setInterval(() => {
+    const timer = setInterval(() => {
       setIndex(i => (i + 1) % total);
     }, INTERVAL);
 
@@ -174,7 +159,7 @@ export default function HealthTestimonials() {
       transition: { duration: 0.9, ease: "easeInOut" }
     });
 
-    return () => clearInterval(interval);
+    return () => clearInterval(timer);
   }, [index, inView]);
 
   return (
@@ -182,7 +167,7 @@ export default function HealthTestimonials() {
       ref={ref}
       className="relative py-20 overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#EEF2F6]"
     >
-      {/* Subtle grid */}
+      {/* Grid */}
       <div
         className="absolute inset-0 opacity-[0.12]"
         style={{
@@ -206,12 +191,11 @@ export default function HealthTestimonials() {
           <div className="mt-4 w-24 h-1 bg-blue-600 rounded-full mx-auto" />
 
           <p className="mt-8 text-slate-700 max-w-2xl mx-auto text-lg leading-relaxed italic">
-  Real stories from people who stopped fighting their body
-  <span className="not-italic font-medium">
-    {" "}and started supporting it.
-  </span>
-</p>
-
+            Real stories from people who stopped fighting their body{" "}
+            <span className="not-italic font-medium">
+              and started supporting it.
+            </span>
+          </p>
 
           <div className="mt-4 inline-flex items-center gap-2 px-5 py-2 rounded-full bg-emerald-50 text-emerald-700 text-sm font-medium">
             <ShieldCheck size={16} />
@@ -230,40 +214,9 @@ export default function HealthTestimonials() {
               />
             ))}
           </motion.div>
-
-          {/* Controls */}
-          <button
-            onClick={() =>
-              setIndex(i => (i - 1 + total) % total)
-            }
-            className="
-              absolute left-4 top-1/2 -translate-y-1/2
-              bg-white border border-slate-300
-              text-blue-600
-              rounded-full p-3 shadow-lg
-              hover:bg-blue-50
-            "
-          >
-            <ChevronLeft size={22} />
-          </button>
-
-          <button
-            onClick={() =>
-              setIndex(i => (i + 1) % total)
-            }
-            className="
-              absolute right-4 top-1/2 -translate-y-1/2
-              bg-white border border-slate-300
-              text-emerald-600
-              rounded-full p-3 shadow-lg
-              hover:bg-emerald-50
-            "
-          >
-            <ChevronRight size={22} />
-          </button>
         </div>
 
-        {/* Progress */}
+        {/* Progress Dots */}
         <div className="mt-12 flex justify-center gap-3">
           {testimonials.map((_, i) => (
             <span
@@ -276,6 +229,7 @@ export default function HealthTestimonials() {
             />
           ))}
         </div>
+
       </div>
     </section>
   );

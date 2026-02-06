@@ -206,34 +206,68 @@ export default function WaterTherapySection() {
           </div>
 
           {/* CTA + WHATSAPP (ONLY CHANGE HERE) */}
-          <div className="flex flex-col sm:flex-row justify-center gap-5">
-            {/* CALL */}
-            <motion.button
-              onClick={() => {
-                setMode("call");
-                setOpenForm(true);
-              }}
-              whileHover={{ y: -3, boxShadow: "0 18px 40px rgba(37,99,235,0.35)" }}
-              whileTap={{ scale: 0.96 }}
-              className="px-16 py-5 rounded-full font-semibold text-white bg-gradient-to-r from-emerald-500 to-blue-600 shadow-xl"
-            >
-              Call Now
-            </motion.button>
+          <div className="mt-16 flex justify-center gap-4 px-3">
 
-            {/* WHATSAPP */}
-            <motion.button
-              onClick={() => {
-                setMode("whatsapp");
-                setOpenForm(true);
-              }}
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.96 }}
-              className="px-12 py-5 rounded-full font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 shadow-sm flex items-center gap-3"
-            >
-              <MessageCircle size={20} />
-              WhatsApp Now
-            </motion.button>
-          </div>
+  {/* CALL */}
+  <motion.button
+    onClick={() => {
+      setMode("call");
+      setOpenForm(true);
+    }}
+    whileHover={{
+      y: -3,
+      scale: 1.05,
+      boxShadow: "0 20px 44px rgba(16,185,129,0.35)"
+    }}
+    whileTap={{ scale: 0.96 }}
+    className="
+      w-full sm:w-auto
+      max-w-[260px]
+      px-6 sm:px-12
+      py-4 sm:py-6
+      rounded-full
+      font-semibold
+      text-white
+      bg-gradient-to-r from-emerald-500 to-blue-600
+      shadow-xl
+      whitespace-nowrap
+      text-sm sm:text-base
+      inline-flex items-center justify-center gap-2
+    "
+  >
+    Call Now
+  </motion.button>
+
+  {/* WHATSAPP */}
+  <motion.button
+    onClick={() => {
+      setMode("whatsapp");
+      setOpenForm(true);
+    }}
+    whileHover={{ y: -2 }}
+    whileTap={{ scale: 0.96 }}
+    className="
+      w-full sm:w-auto
+      max-w-[260px]
+      px-6 sm:px-10
+      py-4 sm:py-6
+      rounded-full
+      font-semibold
+      text-emerald-700
+      bg-emerald-50
+      border border-emerald-200
+      shadow-sm
+      whitespace-nowrap
+      text-sm sm:text-base
+      flex items-center justify-center gap-2
+    "
+  >
+    <MessageCircle size={18} />
+    WhatsApp
+  </motion.button>
+
+</div>
+
 
         </div>
       </section>
