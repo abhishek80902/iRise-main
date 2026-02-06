@@ -49,7 +49,7 @@ export default function ContactFormModal({ open, onClose, mode }) {
     /* ⏳ Short pause for trust & warmth */
     setTimeout(() => {
       if (mode === "call") {
-        window.location.href = `tel:+918920218804`; // 👈 YOUR CALL NUMBER
+        window.location.href = `tel:+916200731541`; // 👈 YOUR CALL NUMBER
       }
 
       if (mode === "whatsapp") {
@@ -59,7 +59,7 @@ Phone: ${form.phone}
 Mujhe Water Therapy ke baare mein baat karni hai.`;
 
         window.location.href =
-          `https://wa.me/918920218804?text=${encodeURIComponent(message)}`; // 👈 YOUR WHATSAPP NUMBER
+          `https://wa.me/916205152101?text=${encodeURIComponent(message)}`; // 👈 YOUR WHATSAPP NUMBER
       }
 
       onClose();
