@@ -206,31 +206,32 @@ export default function PainSection() {
 
   {/* WHATSAPP */}
   <motion.button
-    onClick={() => {
-      setMode("whatsapp");
-      setModalOpen(true);
-    }}
-    whileHover={{ y: -2 }}
-    whileTap={{ scale: 0.95 }}
-    className="
-      w-full sm:w-auto
-      max-w-[260px]
-      px-6 sm:px-10
-      py-4
-      rounded-full
-      font-semibold
-      text-emerald-700
-      bg-emerald-50
-      border border-emerald-200
-      shadow-sm
-      flex items-center justify-center gap-2
-      whitespace-nowrap
-      text-sm sm:text-base
-    "
-  >
-    <MessageCircle size={18} />
-    WhatsApp
-  </motion.button>
+  onClick={() => {
+    setMode("whatsapp");
+    setModalOpen(true);
+  }}
+  whileHover={{ y: -2 }}
+  whileTap={{ scale: 0.95 }}
+  className="
+    w-full sm:w-auto
+    max-w-[260px]
+    px-6 sm:px-10
+    py-4
+    rounded-full
+    font-semibold
+    text-white
+    bg-[#075E54]
+    border border-[#064C44]
+    shadow-sm
+    flex items-center justify-center gap-2
+    whitespace-nowrap
+    text-sm sm:text-base
+  "
+>
+  <MessageCircle size={18} />
+  WhatsApp Now
+</motion.button>
+
 
 </div>
 

@@ -195,31 +195,32 @@ export default function ConsultationRoadmap() {
 
   {/* WHATSAPP */}
   <motion.button
-    onClick={() => {
-      setMode("whatsapp");
-      setOpenForm(true);
-    }}
-    whileHover={{ y: -2 }}
-    whileTap={{ scale: 0.96 }}
-    className="
-      w-full sm:w-auto
-      max-w-[260px]
-      px-6 sm:px-10
-      py-4 sm:py-6
-      rounded-full
-      font-semibold
-      text-emerald-700
-      bg-emerald-50
-      border border-emerald-200
-      shadow-sm
-      whitespace-nowrap
-      text-sm sm:text-base
-      flex items-center justify-center gap-2
-    "
-  >
-    <MessageCircle size={18} />
-    WhatsApp
-  </motion.button>
+  onClick={() => {
+    setMode("whatsapp");
+    setOpenForm(true);
+  }}
+  whileHover={{ y: -2 }}
+  whileTap={{ scale: 0.96 }}
+  className="
+    w-full sm:w-auto
+    max-w-[260px]
+    px-6 sm:px-10
+    py-4 sm:py-6
+    rounded-full
+    font-semibold
+    text-white
+    bg-[#075E54]
+    border border-[#064C44]
+    shadow-sm
+    whitespace-nowrap
+    text-sm sm:text-base
+    flex items-center justify-center gap-2
+  "
+>
+  <MessageCircle size={18} />
+  WhatsApp Now
+</motion.button>
+
 
 </div>
 
