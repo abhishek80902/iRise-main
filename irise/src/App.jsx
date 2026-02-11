@@ -5,7 +5,6 @@ import Footer from "./components/Footer";
 import WhatsAppChatButton from "./components/WhatsAppChatButton";
 
 import Home from "./pages/Home";
-import BookCallPage from "./pages/BookCallPage";
 
 export default function App() {
   return (
